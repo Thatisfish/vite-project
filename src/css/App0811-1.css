@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#root{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 水平置中 */
+	align-items: center; /* 垂直靠上 */
+}
+.fa {
+    margin: 10px;
+    border: 1px solid #b49d9d;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;  /* 讓 .city 和 .container 都水平對齊 */
+}
+.card{
+    width: 250px;
+    padding: 10px;
+    
+}
+.card-body{
+    display: flex;
+	flex-direction: column;   /* 垂直排列子元素 */
+	justify-content: center;  /* 垂直方向置中 */
+	align-items: center;      /* 水平方向置中 */
+}
+.card-weat-img{
+    width: 150px;
+}
+p{
+    font-size: 20px;
+    margin: 5px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.icon-text{
+    display: flex;
+    align-items: center;
+}
+.city{
+    display: flex;
+    flex-direction: column;
+	align-items: center; 
+    font-size: 30px;
+    background-color: rgb(177, 177, 177);
+    width: 812px;
+}

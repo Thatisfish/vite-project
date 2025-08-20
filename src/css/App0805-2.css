@@ -1,0 +1,35 @@
+header img{
+    width: 40px;
+    height: 40px;
+}
+
+body{
+    background-color: rgb(155, 155, 155);
+}
+
+div .wrap{
+    max-width: 768px;
+    margin: 0 600px;
+    padding: 5px 20px;
+    background-color: white;
+}
+.wrap img{
+    display: block;
+    height: auto;
+    width: 704px;
+    padding: 32px;
+
+}
+.wp{
+    max-width: 768px;
+    margin: 0 600px;
+    padding: 5px 20px;
+    background-color: white;
+}
+.wp a{
+    margin: 0 10px;
+}
+.wp a button{
+    border-radius: 30px;
+    background-color: rgb(216, 216, 216);
+}
