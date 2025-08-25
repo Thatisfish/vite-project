@@ -13,8 +13,8 @@ const TodoWrapper = () => {
 
     const [todos, setTodos] = useState(
         [
-            { content: '繳停車費', id: Math.random(), isCompleted: false },
-            { content: '對發票', id: Math.random(), isCompleted: false },
+            { content: '繳停車費', id: Math.random(), isCompleted: false, isEdit: false },
+            { content: '對發票', id: Math.random(), isCompleted: false, isEdit: false },
         ]
     );
 
@@ -36,7 +36,21 @@ const TodoWrapper = () => {
     const toggleCompleter = (id) => {
         setTodos(todos.map((todo) => {
             return todo.id === id
-                ? {...todo,isCompleted:!todo.isCompleted}
+                ? { ...todo, isCompleted: !todo.isCompleted }
+                : todo
+        }))
+    }
+    const toggleIsEdit = (id) => {
+        setTodos(todos.map((todo) => {
+            return todo.id === id
+                ? { ...todo, isEdit: !todo.isEdit }
+                : todo
+        }))
+    }
+    const editTodo = (id, editContent) => {
+        setTodos(todos.map((todo) => {
+            return todo.id === id
+                ? { ...todo, content: editContent, isEdit: false }
                 : todo
         }))
     }
@@ -61,7 +75,12 @@ const TodoWrapper = () => {
             */}
             {
                 todos.map((todo) => {
-                    return <Todo todo={todo} key={todo.id} delTodo={delTodo} toggleCompleter={toggleCompleter} />
+                    return <Todo todo={todo} key={todo.id}
+                        delTodo={delTodo}
+                        toggleCompleter={toggleCompleter}
+                        toggleIsEdit={toggleIsEdit}
+                        editTodo={editTodo}
+                    />
                 })
             }
 
