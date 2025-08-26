@@ -3,14 +3,14 @@ import { createRoot } from 'react-dom/client'
 // import './index.css'
 // import App from './App'
 // import App from './App0805-1'
-import App from './pages/App0825-2'
+import App from './pages/App0826-3'
 // import App from './App'
 import { HashRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <HashRouter>
-      <App />
-    </HashRouter>
-  </StrictMode>,
+	<StrictMode>
+		<HashRouter>
+			<App />
+		</HashRouter>
+	</StrictMode>,
 )

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<title>Document</title>
+	<style>
+		a {
+			text-decoration: none;
+			color: red;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		.ttpShow {
+			display: none;
+		}
+
+		#ttpPanel {
+			background-color: #fff;
+			width: 200px;
+			text-align: left;
+			border: 3px solid #ccc;
+			position: absolute;
+			z-index: 99;
+			padding: 15px;
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrap">
+		<h1>Tooltip</h1>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et consequatur officia sapiente, veniam maiores
+			fugit, repudiandae ipsum nostrum modi eaque nulla temporibus vel dolorem ad cumque dolorum harum, labore
+			sint. Lorem ipsum dolor sit, amet consectetur
+			<a href="">
+				adipisicing
+				<span class="ttpShow">adipisicing內容說明...</span>
+			</a>
+			elit.Minus vero,ex odit natus nam quos excepturi
+			consequuntur modi amet ab. Et impedit tempora vel vitae, quidem voluptas commodi veritatis inventore. Lorem
+			ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptatibus vero aliquam fuga illum ipsa deleniti
+			nostrum vel iusto id libero numquam est dolorum laudantium, repudiandae magni nesciunt eligendi repellendus.
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quibusdam, excepturi iusto placeat error
+			voluptatum fuga corrupti ut qui nisi delectus illum inventore maxime, voluptatem nulla ipsam quidem
+			corporis! Fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus deserunt tenetur id,
+			praesentium consectetur ex facilis aliquid iste sunt suscipit quibusdam impedit iusto perspiciatis ut
+			blanditiis sint earum repellendus quidem? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur
+			sit blanditiis velit accusamus! Impedit, labore incidunt voluptas iusto, quibusdam eligendi cum soluta
+			laudantium molestias itaque repellat rerum eveniet consectetur eum. Lorem ipsum dolor sit amet consectetur
+			adipisicing elit. Eaque, repellat! Reiciendis itaque labore soluta repellat et ea dignissimos, vitae eos
+			facere! Nemo quas minima commodi rerum earum similique voluptatum adipisci?
+		</p>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+	<script>
+		$(function () {
+			$('a:has(.ttpShow)').mousemove(function (e) {
+				$('body').append('<div id="ttpPanel">' + $(this).children('.ttpShow').html() + '</div>')
+				$('#ttpPanel').css({ top: (e.pageY + 10) + 'px', left: (e.pageX + 10) + 'px' }).fadeIn("fast");
+			}).mousemove(function (e) {
+				$('#ttpPanel').css({ top: (e.pageY + 10) + 'px', left: (e.pageX + 10) + 'px' });
+			}).mouseout(function () {
+				$('#ttpPanel').remove()
+			})
+		})
+	</script>
+</body>
+
+</html>
